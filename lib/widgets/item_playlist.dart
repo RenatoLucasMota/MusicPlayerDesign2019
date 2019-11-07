@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:photo_redesign/models/playlist.dart';
 
-class ItemSong extends StatelessWidget {
+class ItemPlayList extends StatefulWidget {
+  @required
+  PlayList playList;
+  ItemPlayList(this.playList);
+
+  @override
+  _ItemPlayListState createState() => _ItemPlayListState(playList);
+}
+
+class _ItemPlayListState extends State<ItemPlayList> {
+  @required
+  PlayList playList;
+  _ItemPlayListState(this.playList);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +26,7 @@ class ItemSong extends StatelessWidget {
             width: 240,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/profile.jpg'),
+                  image: AssetImage('assets/images/profile.jpg'), // Aqui você deve colocar a Thumb da PlayList playList.capa
                 ),
                 borderRadius: BorderRadius.circular(30)),
           ),
@@ -30,7 +43,7 @@ class ItemSong extends StatelessWidget {
           ),
           Positioned(
             child: Text(
-              '90s Love Song',
+              playList.nome, // Nome da PlayList
               style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Google',
@@ -42,7 +55,7 @@ class ItemSong extends StatelessWidget {
           ),
           Positioned(
             child: Text(
-              'Seguidores',
+              'Seguidores', // Seguidores da PlayList
               style: TextStyle(
                   color: Colors.grey[300],
                   fontFamily: 'Google',
@@ -53,7 +66,7 @@ class ItemSong extends StatelessWidget {
           ),
           Positioned(
             child: Text(
-              '15.100.901',
+              playList.numseguidores, // Quantidade de seguidores da PlayList
               style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Google',

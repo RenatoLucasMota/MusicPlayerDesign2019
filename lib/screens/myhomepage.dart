@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:photo_redesign/widgets/listviewsongs.dart';
+import 'package:photo_redesign/widgets/listview_playlists.dart';
+import 'package:photo_redesign/lists/list_playlist.dart';
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -59,7 +60,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ListViewSong(5),
+                  ListViewPlayLists(ListPlayLists.retor),
                 ],
               ),
               new BottomAppBar(),
